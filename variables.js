@@ -1,44 +1,82 @@
-console.log(userTitle); console.log(userName); console.log(userSurname);
+// userName es una variable que tiene dentro una String
+userName = "Omar";
+userSurname = 'Olmedo';
+const ESPACIO = " ";
+
+// una String con backticks es un template literal
+userTitle = `Professor`;
+
+console.log(userTitle);
+console.log(userName);
+console.log(userSurname);
+
 console.log(userTitle, userName, userSurname);
+
 userName = "Pablo";
-console.log(userTitle + ' + userName + + userSurname); console.log(userTitle + ESPACIO + userName + ESPACIO + usersurname);
-userSurname = "Rodriguez";
-console.log(¿Qué tal estás, ${userName) $(userSurname)?");
-userAge 33; // Number
+
+console.log(userTitle + ' ' + userName + ' ' + userSurname);
+console.log(userTitle + ESPACIO + userName + ESPACIO + userSurname);
+
+userSurname = "Rodríguez";
+
+console.log(`¿Qué tal estás, ${userName} ${userSurname}?`);
+
+userAge = 33; // Number
 userExperience = 10;
 userHasHair = false; // Boolean
+
 console.log(userName + userAge);
 console.log(userAge + userExperience);
+
 userExperience = "diez";
 console.log(userAge + userExperience);
-console.log("Edad: + userAge, "\nAños de experiencia: " + userExperience); I
+
+console.log("Edad: " + userAge, "\nAños de experiencia: " + userExperience);
+
 // ESPACIO = "-";
-// TODO: arrays, objects
-
 
 a = 1;
 b = 2;
 
-// TODO
+c = a;
+a = b;
+b = c;
 
-console.log(a,b);
+console.log(a, b); // 2, 1
 
-let a = 1;
-let b = 2;
+[a, b] = [b, a]
 
+console.log(a, b); // 1, 2
 
-// usando desestructuracion 
+// ---
 
+const PI = "3.1415"
+radi = 4.5
 
+console.log("El area del cículo es:" + PI*radi**2);
 
+cercle = {
+    area: PI*radi**2 + "metros cuadrados" 
+}
 
-a = 1;
-b = 2;
+console.log(typeof cercle.area, typeof parseDloar(cercle.area));
 
-// TODO
-[a, b] = [b, a];
+radiString = radi.toString()
 
-console.log(a, b);
+console.log(radiStrinf, typeof radiString);
 
+data = {
 
+    data0: PI,
+    data1: parseFloat(PI),
+    data2: parseInt(PI),
+    data3: radi,
+    data4: radi.toString()
+}
+
+console.log(data.data0, typeof data.data0);
+console.log(data.data1, typeof data.data0);
+console.log(data.data2, typeof data.data0);
+console.log(data.data3, typeof data.data0);
+console.log(data.data4, typeof data.data0);
 

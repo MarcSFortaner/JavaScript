@@ -1,1 +1,1 @@
-console.log ("Hola MUndo2")
+console.log("Hello world 1 (archivo separado)");

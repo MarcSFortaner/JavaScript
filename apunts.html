@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apunts de JavaScript Marc Sanz Fortaner</title>
+
+    <style>
+        body {
+            background-color: rgb(250, 245, 246);
+            font-family: 'iA Writer Mono',  monospace;
+            font-size:22px;
+        }
+        main {
+            margin: auto;
+            width: 800px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        h2 {
+            margin-top: 50px;
+        }
+        p {
+            padding-left: 50px;
+        }
+
+          /* Estilo para los enlaces */
+          a {
+            text-decoration: underline;
+            /* Inicialmente, el subrayado es de color negro y grosor inicial */
+            text-decoration-color: black;
+            text-decoration-thickness: 2px; /* Grosor inicial del subrayado */
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <main>
+        <img src="img/cat.gif" alt="Descripción de la imagen" height="220" width="220"> <img src="img/dog.gif" alt="Descripción de la imagen" height="220" width="220"> <img src="img/dog2.gif" alt="Descripción de la imagen" height="220" width="220">
+        <h1>Apunts de JavaScript <img src="img/logo.png" alt="Descripción de la imagen" height="80" width="80">
+            <br>Marc Sanz Fortaner</h1> <img src="img/logo2.png" alt="Descripción de la imagen" height="80" width="80">
+
+        <h2>Continguts i exercicis</h2>
+
+        <h3>28 de juny</h3>
+        <p> <b><a href="hello world.html">Ejercicio "Hello World"</a></b>: ejercicio donde descubrimos la consola y vemos dónde pueden añadirse los scripts en una web</p>
+        <p> <b><a href="variables.html">Variables y console.log()</a></b>: ejercicio de declaración de variables y console.log()</p>
+
+        <h3>29 de juny</h3>
+        <p><a href="arrays_objects.html">Arrays i objectes</a>: ejercicis d'arrays i objectes</p>
+
+        <h3>6 de Juliol</h3>
+        <p><a href="metodes.html">Mètodes de Strings</a>: Apunts de Mètodes de Strings</p>
+
+       
+    
+            <h2>Coses per fer</h2>
+            <p><input type="checkbox" name="1" id="task1"><label for="task1">Concurs exercicis HTML + CSS</label></p>
+    
+            <h2>Enllaços</h2>
+            <p><a href="https://stratocastero.github.io/javascript_lasalle/">README del repositori del curs</a></p>
+        </main>
+        <script>
+            // Obtén todos los enlaces
+            const enlaces = document.querySelectorAll('a');
+    
+            // Objeto para almacenar el último color aleatorio de cada enlace
+            const ultimoColor = {};
+    
+            // Función para generar un color aleatorio en formato hexadecimal
+            function getRandomColor() {
+                const letras = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letras[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+    
+            // Función para aplicar color aleatorio y grosor al subrayado del enlace
+            function aplicarEstiloAleatorio(enlace) {
+                const colorAleatorio = getRandomColor();
+                enlace.style.textDecorationColor = colorAleatorio;
+                enlace.style.textDecorationThickness = `${Math.floor(Math.random() * 3) + 2}px`; // Grosor aleatorio entre 2px y 4px
+                ultimoColor[enlace.href] = colorAleatorio; // Almacena el color aleatorio asignado
+            }
+    
+            // Agrega un manejador de eventos para cada enlace
+            enlaces.forEach(enlace => {
+                // Aplica color aleatorio y grosor al subrayado al cargar la página
+                aplicarEstiloAleatorio(enlace);
+    
+                // Agrega evento para cambiar color y grosor del subrayado al hacer mouseover
+                enlace.addEventListener('mouseover', () => {
+                    const colorAleatorio = getRandomColor();
+                    enlace.style.textDecorationColor = colorAleatorio;
+                    enlace.style.textDecorationThickness = `${Math.floor(Math.random() * 3) + 2}px`; // Grosor aleatorio entre 2px y 4px
+                    ultimoColor[enlace.href] = colorAleatorio;
+                    
+                    // Almacena el color aleatorio y grosor a todos los enlaces
+                    enlaces.forEach(link => {
+                        if (link !== enlace) {
+                            const colorAleatorioOtros = getRandomColor();
+                            link.style.textDecorationColor = colorAleatorioOtros;
+                            link.style.textDecorationThickness = `${Math.floor(Math.random() * 3) + 2}px`; // Grosor aleatorio entre 2px y 4px
+                            ultimoColor[link.href] = colorAleatorioOtros;
+                        }
+                    });
+                });
+            });
+        </script>
+        
+        
+        
+        
+        
+    </body>
+    </html>
