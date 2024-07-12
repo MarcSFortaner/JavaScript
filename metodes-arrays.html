@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apunts de JavaScript Marc Sanz Fortaner</title>
+    <style>
+        body {
+            background-color: rgb(250, 245, 246);
+            font-family: 'iA Writer Mono', monospace;
+            font-size: 22px;
+        }
+        main {
+            margin: auto;
+            width: 800px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        h2 {
+            margin-top: 50px;
+        }
+        p {
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Apunts de Mètodes d´Arrays</h2>
+      
+         <p> <b>Métodes</b> </p>
+         const animals = ["😼", "🐶", "🐵", "🦝", "🐷"];
+         const colors = ["🔴", "🟡", "🟠", "🟢", "🔵"];
+         const results = [];
+         results.push(`<li><span class="bold">Array animals:</span> ${animals.join(", ")}</li>`);
+         results.push(`<li><span class="bold">Array colors:</span> ${colors.join(", ")}</li>`);
+         results.push(`<li><span class="bold">concat("", {nombre: "vaca"}):</span> ${animals.concat("", {nombre: "vaca"}).join(", ")}</li>`);
+         results.push(`<li><span class="bold">concat(colors):</span> ${animals.concat(colors).join(", ")}</li>`);
+         results.push(`<li><span class="bold">Array of arrays:</span> ${[animals, colors]}</li>`);
+         results.push(`<li><span class="bold">join():</span> ${animals.join()}</li>`);
+         results.push(`<li><span class="bold">join(" / "):</span> ${animals.join(" / ")}</li>`);
+         let elefant = animals.pop();
+         results.push(`<li><span class="bold">pop() - remaining animals:</span> ${animals.join(", ")}</li>`);
+         results.push(`<li><span class="bold">pop() - removed element:</span> ${elefant}</li>`);
+         elefant = animals.pop();
+         results.push(`<li><span class="bold">pop() - remaining animals:</span> ${animals.join(", ")}</li>`);
+         results.push(`<li><span class="bold">pop() - removed element:</span> ${elefant}</li>`);
+         results.push(`<li><span class="bold">push("3") - new length:</span> ${animals.push("3")}</li>`);
+         results.push(`<li><span class="bold">Array after push:</span> ${animals.join(", ")}</li>`);
+         const array = [1, 2, [3, 4, 5], [[6, 7], 8]];
+         results.push(`<li><span class="bold">flat() - one level:</span> ${array.flat().join(", ")}</li>`);
+         results.push(`<li><span class="bold">flat() - two levels:</span> ${array.flat().flat().join(", ")}</li>`);
+         
+         document.getElementById("array-methods").innerHTML = results.join("");
+
+        
+
+
+
+        <!-- Apuntes adicionales de JavaScript -->
+        <script>
+            // Apunts de Mètodes d´Arrays
+            // * provar mètodes concat(), join(), pop(), push(), shift(), unshift(), flat()
+            let animals = ["😼", "🐶","🐵","🦝" ,"🐷"];
+            let colors = ["🔴","🟡","🟠","🟢","🔵"];
+            console.log(animals, colors);
+            console.log(animals.concat("", {nombre: "vaca"}));
+            console.log(animals.concat(colors));
+            // une los dos arrays
+            console.log([animals, colors]);
+            // crea un array de arrays
+            console.log(animals.join());
+            console.log(animals.join(" / "));
+            // pop() elimina el ultimo elemento y lo devuelve
+            let elefant = animals.pop();
+            console.log(animals);
+            console.log(elefant);
+            console.log(animals.pop());
+            console.log(animals);
+            // push() añade un elemento y devuelve la nueva length del array
+            console.log(animals);
+            console.log(animals.push("3"));
+            console.log(animals);
+            // shift() y unshift() hacen lo mismo que pop() y push() pero en el principio del array
+            // flat() une en un único array el array y sus subarrays
+            let array = [1, 2, [3, 4, 5], [[6, 7], 8]];
+            console.log(array.flat());
+            // "aplana" un nivel
+            console.log(array.flat().flat());
+            // "aplana" dos niveles
+        </script>
+        <p>Prem F12 per obrir la consola i veure els logs</p>
+        <a href="apunts.html">Volver a los apuntes</a>
+    </main>
+</body>
+</html>
+
+</body>
+</html>

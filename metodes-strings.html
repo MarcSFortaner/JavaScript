@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apunts de JavaScript Marc Sanz Fortaner</title>
+
+    <style>
+        body {
+            background-color: rgb(250, 245, 246);
+            font-family: 'iA Writer Mono',  monospace;
+            font-size:22px;
+        }
+        main {
+            margin: auto;
+            width: 800px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        h2 {
+            margin-top: 50px;
+        }
+        p {
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+  
+    <main>
+
+         <!-- Apuntes adicionales de JavaScript -->
+         <h2>Apunts de Mètodes de Strings</h2>
+         <p><span class="bold">trim()</span>: Elimina los espacios en blanco al principio y al final de una cadena.</p>
+         <pre>
+             // Apunts de Mètodes de Strings
+ 
+             // trim(): Elimina los espacios en blanco al principio y al final de una cadena.
+             let text = "   Hello World   ";
+             console.log(text.trim()); // "Hello World"
+             
+             // padStart() y padEnd(): Añade caracteres al inicio o al final de una cadena hasta alcanzar la longitud deseada.
+             let text = "Hello";
+             console.log(text.padStart(10, '*')); // "*****Hello"
+             console.log(text.padEnd(10, '*'));   // "Hello*****"
+             
+             // replace() y replaceAll(): Reemplaza una subcadena por otra.
+             // replace() solo reemplaza la primera aparición, mientras que replaceAll() reemplaza todas las apariciones.
+             let text = "Hello World";
+             console.log(text.replace("World", "Universe")); // "Hello Universe"
+             console.log(text.replaceAll("l", "L")); // "HeLLo WorLd"
+             
+             // split(): Divide una cadena en un array de subcadenas basadas en un delimitador.
+             let text = "Hello World";
+             console.log(text.split(" ")); // ["Hello", "World"]
+             
+             // toUpperCase() y toLowerCase(): Convierte una cadena a mayúsculas o minúsculas.
+             let text = "Hello World";
+             console.log(text.toUpperCase()); // "HELLO WORLD"
+             console.log(text.toLowerCase()); // "hello world"
+             
+             // slice(): Extrae una parte de una cadena sin modificar la original.
+             let text = "Hello World";
+             console.log(text.slice(0, 5)); // "Hello"
+             
+             // Mètodes de Búsqueda
+             
+             // indexOf(): Devuelve el índice de la primera aparición de una subcadena.
+             let text = "Hello World";
+             console.log(text.indexOf("World")); // 6
+             
+             // includes(): Verifica si una subcadena está incluida en la cadena.
+             let text = "Hello World";
+             console.log(text.includes("World")); // true
+             
+             // startsWith() y endsWith(): Verifican si la cadena empieza o termina con una subcadena específica.
+             let text = "Hello World";
+             console.log(text.startsWith("Hello")); // true
+             console.log(text.endsWith("World")); // true
+             
+             // Gestió de Dades
+             
+             // Gestionar dades amb bucles i condicionals.
+             
+             let data = "NOM Omar COG Olmedo AGE 33";
+             
+             // Dividir la cadena de datos en un array de palabras
+             let dataArray = data.split(" ");
+             
+             // Crear un objeto para almacenar los datos
+             let dataObject = {};
+             
+             // Recorrer el array y asignar los valores al objeto
+             for (let i = 0; i < dataArray.length; i += 2) {
+                 let key = dataArray[i];
+                 let value = dataArray[i + 1];
+                 dataObject[key] = value;
+             }
+             
+             // Imprimir los datos del objeto en formato legible
+             console.log("Datos del objeto:");
+             for (let key in dataObject) {
+                 if (dataObject.hasOwnProperty(key)) {
+                     console.log(`${key}: ${dataObject[key]}`);
+                 }
+             }
+             
+             // Ejemplo de condicional
+             if (parseInt(dataObject.AGE) > 30) { // Convertir la edad a número para la comparación
+                 console.log("La edad es mayor de 30.");
+             } else {
+                 console.log("La edad es 30 o menor.");
+             }
+             
+             / Gestionar datos con bucles y condicionales
+ 
+ let data0 = "NOM Omar";
+ let data1 = "COG Olmedo";
+ let data2 = "AGE 33";
+ 
+ let data = "NOM Omar COG Olmedo AGE 33";
+ 
+ // Dividir la cadena de datos en un array de palabras
+ let dataArray = data.split(" ");
+ 
+ // Crear un objeto para almacenar los datos
+ let dataObject = {};
+ 
+ // Recorrer el array y asignar los valores al objeto
+ for (let i = 0; i < dataArray.length; i += 2) {
+     let key = dataArray[i];
+     let value = dataArray[i + 1];
+     dataObject[key] = value;
+ }
+ 
+ console.log(dataObject); // { NOM: "Omar", COG: "Olmedo", AGE: "33" }
+ 
+ // Usar bucles y condicionales para gestionar datos
+ 
+ // Imprimir los datos en formato legible
+ for (let key in dataObject) {
+     if (dataObject.hasOwnProperty(key)) {
+         console.log(`${key}: ${dataObject[key]}`);
+     }
+ }
+ 
+ // Ejemplo de condicional
+ if (parseInt(dataObject.AGE) > 30) {
+     console.log("La edad es mayor de 30.");
+ } else {
+     console.log("La edad es 30 o menor.");
+ }
+ 
+ 
+ 
+ // Ofuscar DNI
+ let dni = "12345678A";
+ console.log("DNI completo: " + dni);
+ console.log("DNI ofuscado: " + dni.slice(0, -4).padEnd(dni.length, "x"));
+ 
+ //cambiar nombre
+ console.log("Text original: '" + text + "'");
+ console.log("Text alterat: '" + text.trim().replace("l'Omar", "el profe") + "'");
+ 
+ // TODO: censurar el nombre en el texto de arriba
+ let censura = "el profe";
+ console.log("Text normal: " + text);
+ console.log("Text censurat: " + text.replace(/l'Omar/g, "X".repeat("l'Omar".length)));
+ 
+             </pre>
+
+        <p>Prem F12 per obrir la consola i veure els logs</p>
+        <a href="apunts.html">Volver a los apuntes</a>
+    </main>
+    
+    <script src="metodes.js"></script>
+</body>
+</html>
